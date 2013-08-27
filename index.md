@@ -6,6 +6,7 @@ framework: bootstrap
 mode: selfcontained
 highlighter: prettify
 hitheme: twitter-bootstrap
+ext_widgets: [nvd3]
 assets:
   css:
   - "http://fonts.googleapis.com/css?family=Raleway:300"
@@ -13,6 +14,12 @@ assets:
 ---
 
 <style>
+iframe{
+  height:600px;
+  width:900px;
+  margin:auto auto;
+}
+
 body{
   font-family: 'Oxygen', sans-serif;
   font-size: 16px;
@@ -81,6 +88,8 @@ n1$x2Axis(tickFormat = "#!function(d) {return d3.time.format('%Y')(new Date( d *
 # add Angular control for y variable
 n1$addControls("y", value = "cumul", values = names(managers.melt.calcs)[-(1:2)])
 
-n1
+n1$show("iframe", cdn = F)
 ```
+
+<iframe src=assets/fig/unnamed-chunk-1.html seamless></iframe>
 

@@ -47,6 +47,11 @@
     <div class="container">
       
 <style>
+iframe{
+  height:600px;
+  width:900px;
+}
+
 body{
   font-family: 'Oxygen', sans-serif;
   font-size: 16px;
@@ -75,6 +80,8 @@ text-indent: 100px;
 <h1>Money Manager Performance Analytics with rCharts + nvd3 + angular</h1>
 
 <p>Interactivity significantly aids visual analysis of data.  Here is a quick example how we might use the <code>dev</code> branch of <code>rCharts</code> which includes some basic <code>angular</code> controls.</p>
+
+<iframe src=assets/fig/unnamed-chunk-1.html seamless></iframe>
 
 <pre><code class="r">library(reshape2)
 library(plyr)
@@ -113,9 +120,8 @@ n1$x2Axis(tickFormat = &quot;#!function(d) {return d3.time.format(&#39;%Y&#39;)(
 # add Angular control for y variable
 n1$addControls(&quot;y&quot;, value = &quot;cumul&quot;, values = names(managers.melt.calcs)[-(1:2)])
 
-n1
+n1$show(&quot;iframe&quot;)
 </code></pre>
-
     </div>
         
 </body>

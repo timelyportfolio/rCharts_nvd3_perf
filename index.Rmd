@@ -13,6 +13,12 @@ assets:
 ---
 
 <style>
+iframe{
+  height:600px;
+  width:900px;
+  margin:auto auto;
+}
+
 body{
   font-family: 'Oxygen', sans-serif;
   font-size: 16px;
@@ -109,5 +115,5 @@ n1$x2Axis(tickFormat =
 #add Angular control for y variable
 n1$addControls("y", value = "cumul", values = names(managers.melt.calcs)[-(1:2)])
 
-n1
+n1$show("iframe",cdn=F)
 ```
