@@ -6,7 +6,6 @@ framework: bootstrap
 mode: selfcontained
 highlighter: prettify
 hitheme: twitter-bootstrap
-ext_widgets: [nvd3]
 assets:
   css:
   - "http://fonts.googleapis.com/css?family=Raleway:300"

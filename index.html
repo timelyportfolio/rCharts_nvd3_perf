@@ -28,7 +28,9 @@
   <script src="libraries/frameworks/bootstrap/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="libraries/frameworks/bootstrap/js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-    <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Raleway:300"></link>
+    <link rel=stylesheet href="./assets/css/nv.d3.css"></link>
+<link rel=stylesheet href="./assets/css/rNVD3.css"></link>
+<link rel=stylesheet href="http://fonts.googleapis.com/css?family=Raleway:300"></link>
 <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Oxygen"></link>
 
   
@@ -50,6 +52,7 @@
 iframe{
   height:600px;
   width:900px;
+  margin:auto auto;
 }
 
 body{
@@ -79,9 +82,7 @@ text-indent: 100px;
 
 <h1>Money Manager Performance Analytics with rCharts + nvd3 + angular</h1>
 
-<p>Interactivity significantly aids visual analysis of data.  Here is a quick example how we might use the <code>dev</code> branch of <code>rCharts</code> which includes some basic <code>angular</code> controls.  Of course, this is a very limited subset of all the risk/return measures that <code>PerformanceAnalytics</code> provides.</p>
-
-<iframe src=assets/fig/unnamed-chunk-1.html seamless></iframe>
+<p>Interactivity significantly aids visual analysis of data.  Here is a quick example how we might use the <code>dev</code> branch of <code>rCharts</code> which includes some basic <code>angular</code> controls.</p>
 
 <pre><code class="r">library(reshape2)
 library(plyr)
@@ -120,8 +121,11 @@ n1$x2Axis(tickFormat = &quot;#!function(d) {return d3.time.format(&#39;%Y&#39;)(
 # add Angular control for y variable
 n1$addControls(&quot;y&quot;, value = &quot;cumul&quot;, values = names(managers.melt.calcs)[-(1:2)])
 
-n1$show(&quot;iframe&quot;)
+n1$show(&quot;iframe&quot;, cdn = F)
 </code></pre>
+
+<iframe src=assets/fig/unnamed-chunk-1.html seamless></iframe>
+
     </div>
         
 </body>
@@ -129,7 +133,11 @@ n1$show(&quot;iframe&quot;)
   <script src="libraries/frameworks/bootstrap/js/plugins.js"></script>
   <script src="libraries/frameworks/bootstrap/js/main.js"></script>
   <!-- Load Javascripts for Widgets -->
-  
+  <script src="./assets/js/d3.v3.min.js"></script>
+<script src="./assets/js/fisheye.js"></script>
+<script src="./assets/js/jquery-1.8.2.min.js"></script>
+<script src="./assets/js/nv.d3.min-new.js"></script>
+
   <!-- Google Prettify -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
   <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
